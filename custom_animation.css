@@ -1,0 +1,61 @@
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animated-fast {
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+}
+.animated-bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+.datanumber {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 200px;
+    color: #00FF00; /* Example color */
+    text-align: center;
+    margin: 20px 0;
+}
+
+.datanumber.animated {
+    animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+    from {
+        content: "0";
+    }
+    to {
+        content: attr(data-number);
+    }
+}
+
+
+.glass-container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin: 20px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sliding-text {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.sliding-text.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
